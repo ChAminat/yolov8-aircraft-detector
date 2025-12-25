@@ -1,0 +1,14 @@
+[project]
+name = "yolov8-aircraft-detector"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.127.0",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.5.1",
+]
