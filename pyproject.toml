@@ -5,7 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "fastapi>=0.127.0",
+    "dvc>=3.65.0",
+    "fire>=0.7.1",
 ]
 
 [dependency-groups]
@@ -25,7 +26,8 @@ known_first_party = ["yolov8_aircraft_detector"]
 
 [tool.flake8]
 max-line-length = 90
-extend-ignore = "E203, W503"
+ignore = "D100"
+extend-ignore = "E203, W503, D100"
 max-complexity = 12
 exclude = [
     ".cache",
