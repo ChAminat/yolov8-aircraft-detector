@@ -1,0 +1,6 @@
+outs:
+- md5: fb6b80b719de171a3cabdebf1a01a05d.dir
+  size: 132942070
+  nfiles: 7926
+  hash: md5
+  path: airbus_aircraft_data
