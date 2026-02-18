@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: sign-language-classifier
+Version: 0.1.0
+Summary: YOLO aircraft detector using PyTorch Lightning
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: dvc>=3.65.0
+Requires-Dist: dvc-gdrive>=3.0.1
+Requires-Dist: gdown>=5.2.0
+Requires-Dist: lightning>=2.6.0
+Requires-Dist: numpy>=1.20
+Requires-Dist: opencv-python>=4.5
+Requires-Dist: pytorch-lightning<2.6,>=2
+Requires-Dist: pyyaml>=5.1
+Requires-Dist: torch>=2
+Requires-Dist: torchmetrics[detection]
+Requires-Dist: mlflow>=3.9.0
+Requires-Dist: omegaconf>=2.3.0
+
+# yolov8-aircraft-detector
