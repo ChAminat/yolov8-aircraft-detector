@@ -21,6 +21,8 @@ class SignLanguageCNNModule(pl.LightningModule):
 
         self.accuracy = torchmetrics.Accuracy(task='multiclass', num_classes=num_classes)
         self.f1 = torchmetrics.F1Score(task='multiclass', num_classes=num_classes, average='weighted')
+        self.test_accuracy = torchmetrics.Accuracy(task='multiclass', num_classes=num_classes)
+        self.test_f1 = torchmetrics.F1Score(task='multiclass', num_classes=num_classes, average='weighted')
 
         self.validation_step_outputs = []
         self.test_step_outputs = []
@@ -108,16 +110,20 @@ class SignLanguageCNNModule(pl.LightningModule):
 
     #     return {"val_accuracy": accuracy, "val_f1": f1}
 
-    # def test_step(self, batch: Any, batch_idx: int):
-    #     """Тестирование на одном батче"""
-    #     images, labels = batch
-    #     outputs = self(images)
+    def test_step(self, batch: Any, batch_idx: int):
+        """Тестирование на одном батче"""
+        images, labels = batch
+        outputs = self(images)
+        loss = self.criterion(outputs, labels)
 
-    #     preds = torch.softmax(outputs, dim=1)
+        preds = torch.softmax(outputs, dim=1)
 
-    #     # Обновляем метрики
-    #     self.accuracy(preds, labels)
-    #     self.f1(preds, labels)
+        self.test_accuracy(preds, labels)
+        self.test_f1(preds, labels)
+
+        self.log("test_loss", loss, prog_bar=True, on_step=False, on_epoch=True, logger=True)
+        self.log("test_accuracy", self.test_accuracy, prog_bar=True, on_step=False, on_epoch=True, logger=True)
+        self.log("test_f1", self.test_f1, prog_bar=True, on_step=False, on_epoch=True, logger=True)
 
     #     # Сохраняем предсказания и метки для накопления
     #     _, predicted = torch.max(preds, 1)

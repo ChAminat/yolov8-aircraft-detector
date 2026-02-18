@@ -3,8 +3,8 @@ import pandas as pd
 import pytorch_lightning as pl
 from pathlib import Path
 
-from modules.data import SignLanguageMNISTDataModule
-from modules.trainer import SignLanguageCNNModule
+from sign_language_classifier.modules.data import SignLanguageMNISTDataModule
+from sign_language_classifier.modules.trainer import SignLanguageCNNModule
 
 
 def main(
@@ -32,8 +32,7 @@ def main(
         img_size=img_size,
         train_batch_size=batch_size,  # will be used as predict_batch_size
         predict_batch_size=batch_size,
-        train_num_workers=num_workers,
-        predict_num_workers=num_workers
+        num_workers=num_workers
     )
     
     # Load model from checkpoint
