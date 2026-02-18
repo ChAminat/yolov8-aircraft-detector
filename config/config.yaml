@@ -3,3 +3,9 @@ defaults:
   - model: model
   - training: training
   - logging: logging
+
+hydra:
+  run:
+    dir: .
+  job:
+    chdir: false

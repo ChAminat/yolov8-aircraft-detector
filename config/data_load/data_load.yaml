@@ -1,8 +1,8 @@
-train_csv_path: ../../data/sign_mnist_train.csv
-val_csv_path: ../../data/sign_mnist_val.csv
-test_csv_path: ../../data/sign_mnist_test.csv
-predict_csv_path: ../../data/sign_mnist_pred.csv
-data_path: ../../data
+train_csv_path: data/sign_mnist_train.csv
+val_csv_path: data/sign_mnist_val.csv
+test_csv_path: data/sign_mnist_test.csv
+predict_csv_path: data/sign_mnist_pred.csv
+data_path: data
 data_zip_name: sign_language_data.zip
 img_size: 224
 train_batch_size: 128

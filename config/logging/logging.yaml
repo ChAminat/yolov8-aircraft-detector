@@ -3,4 +3,4 @@ label: mlflow
 experiment_name: "sign-language-mnist-classification"
 run_name: "conv-classifier"
 save_dir: "mlflowruns"
-tracking_uri: "http://127.0.0.1:8080"
+tracking_uri: "file:./mlruns"

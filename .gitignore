@@ -1,3 +1,24 @@
 /airbus_aircraft_data
 
 .python-version
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+mlruns/
+checkpoints/
+*.ckpt
+*.onnx
+.DS_Store
+.idea/
+.vscode/
+*.log
+logs/
+log/
+outputs/
+lightning_logs/
+wandb/
+build/
+dist/
+*.egg-info/
+.hydra/
